@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Franklin+Gothic+Medium&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-image: url('../uploads/intro-bg_1.jpg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Keep this to center align the .products-container */
+            height: 100vh;
+            color: #ffffff;
+            margin-top: 40px;
+            /* Adding a top margin */
+
+        }
+
+        .products-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1200px;
+            /* Optional: max width if you feel the container gets too wide on large screens */
+        }
+
+        .product {
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .product:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="products-container">
+        {{#each products}}
+        <a href="/product/{{this._id}}">
+            <div class="product">
+                <h2>{{this.name}}</h2>
+                <p>{{this.description}}</p>
+                <p>₹{{this.price}}</p>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</body>
+
+</html>

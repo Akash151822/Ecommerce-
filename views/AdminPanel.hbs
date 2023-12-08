@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Franklin+Gothic+Medium&display=swap" rel="stylesheet">
+    <style>
+        /* ... (existing styles) ... */
+body,
+    h1,
+    h2,
+    h3,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+        background-image: url('../uploads/intro-bg_1.jpg');
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+        .dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .section {
+            flex: 0.48;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ffffff;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+   <!-- Add Product Section -->
+<div class="section">
+    <h3>Add Product</h3>
+    <form action="/product/add" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" id="name" placeholder="Product Name" required>
+        <input type="text" name="brand" id="brand" placeholder="Brand" required>
+        <input type="text" name="description" id="description" placeholder="Description" required>
+        <input type="number" name="price" id="price" placeholder="Price" required>
+        <input type="number" name="quantity" id="quantity" placeholder="Quantity" required>
+        <select name="availability" id="availability">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Out of Stock</option>
+        </select>
+        <!-- Add the file input for image upload -->
+        <input type="file" name="image" id="image"  required>
+        <input type="text" name="category" id="category" placeholder="Category">
+        <button type="submit">Add Product</button>
+    </form>
+     <a href="/products" class="btn btn-danger
+                    btn-lg active">View Products</a>
+</div>
+
+
+</body>
+
+</html>
